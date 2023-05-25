@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Arrays em JavaScript</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>Arrays (vetores) em Javascript</h1>
+  <p>Arrays são estruturas de dados em JavaScript que permitem armazenar e acessar vários valores em uma única variável.
+    Cada valor em um array é identificado por um índice, que começa em 0 para o primeiro elemento e aumenta em 1 para
+    cada elemento subsequente. Os elementos de um array podem ser de qualquer tipo de dados, como números, strings,
+    objetos e até outros arrays.</p>
+
+  <h2>Adicionando e Removendo Itens de um Array</h2>
+  <p>É possível adicionar ou remover itens de um array usando métodos específicos. Abaixo estão os métodos mais comuns
+    para adicionar ou remover itens de um array:</p>
+
+  <ul>
+    <li><code>push()</code>: adiciona um ou mais elementos ao final do array</li>
+    <li><code>pop()</code>: remove o último elemento do array e retorna o valor removido</li>
+    <li><code>unshift()</code>: adiciona um ou mais elementos ao início do array</li>
+    <li><code>shift()</code>: remove o primeiro elemento do array e retorna o valor removido</li>
+  </ul>
+
+  <pre><code>// Criando um array com alguns valores
+var frutas = ["maçã", "banana", "laranja"];</code></pre>
+
+  <script>
+    var x = 0; // Variável Simples
+    x = 1;
+
+    // Cria um array de números
+    var numeros = [1, 2, 8, 4, 15];
+
+    // Cria um array de Strings
+    var alunos = ["Thiago Augusto", "Fernando Augusto", "Gabriel Augusto", "Carlos Augusto", "Pamela Augusta"];
+    alert("Array inicial: " + alunos + "<br>");
+
+    // Adiciona um elemento ao início do array
+    alunos.unshift("Carla Elisabete");
+    document.write("Array após o comando unshift: " + alunos + "<br>");
+    alert("Array após o comando unshift: " + alunos + "<br>");
+
+    // Adiciona um elemento ao final do array
+    alunos.push(prompt("Insira o nome do novo aluno:")); //método
+    alert("Array após o comando push: " + alunos + "<br>");
+    document.write("Array após o comando push: " + alunos + "<br>");
+
+    // Identificando um aluno: 
+    var identifica_aluno_destaque = prompt("Qual o número do aluno destaque?");
+    var aluno_destaque = alunos[identifica_aluno_destaque];
+    alert("Aluno destaque: " + aluno_destaque);
+    document.write("Aluno destaque: " + aluno_destaque + "<br>");
+
+    //Remove o primeiro elemento do array e armazena o valor removido em uma variável
+    var primeiroAluno = alunos.shift();
+    alert("O valor removido foi: "+ primeiroAluno + ". Array após o comando shift: " + alunos);
+    document.write("Array após o comando shift: " + alunos + "<br>");
+
+    // Remove o último elemento do array e armazena o valor removido em uma variável
+    var ultimoAluno = alunos.pop();
+    alert("Array após o comando pop: " + alunos);
+    document.write("Array após o comando pop: " + alunos + "<br>");
+
+    //Alterar o segundo elemento de uma lista
+    var substituirAluno = "Paloma";
+    alunos[1] = substituirAluno;
+    alert("Array após o a substituição: " + alunos);
+    document.write("Array após o a substituição: " + alunos + "<br>");
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diferença entre Let e Var 1</title>
+    <script>
+        /* 
+        A diferença entre let e var é que as variáveis definidas com let têm escopo local, enquanto as variáveis definidas com var têm escopo global. É uma boa prática de programação evitar o uso de variáveis globais sempre que possível, pois elas podem levar a efeitos colaterais indesejados e tornar o código mais difícil de entender e depurar.
+        */
+
+        var y = 1; //Variavel Global
+
+        let x = 0; //Variavel nao Global
+
+        // Exemplo com let
+        function exemploLet() {
+            let x = 1;
+
+            if (true) {
+                let x = 2;
+                console.log("Valor de x dentro do if = " + x); // exibe 2
+            }
+
+            console.log("valor de x fora do if = " + x); // exibe 1
+        }
+
+        // Exemplo com var
+        function exemploVar() {
+            y = 8;
+            if (true) {
+                var y = 2;
+                //console.log("valor de y dentro do if = " + y);
+            }
+            //console.log( "valor de y dentro da função = " +y); 
+        }
+
+        console.log("valor de x fora da função = " + x); // exibe 2
+
+        exemploLet();
+        exemploVar();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

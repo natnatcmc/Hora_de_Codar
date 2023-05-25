@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções</title>
+    <script>
+        /* Funções são blocos de código que são executados somente quando chamados. 
+        Elas são declaradas, recebem parâmetros e enviam retornos. */
+        
+        function calculo(primeiro, segundo) {
+            var x = primeiro;
+            var y = segundo;
+
+            var z = (x + y);
+            alert(z);
+
+        }
+
+        function checar_idade() {
+            var idade = prompt("Qual a sua idade?");
+            if (idade >= 18) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        if (checar_idade()) {
+            alert("Você pode ver este produto")
+        } else {
+            alert("Você pode ir ao Xou da Xuxa")
+        }
+
+        function ahbesse () {
+            return 25;
+        }
+        
+        
+        var resultado = ahbesse() + ahbesse();
+        alert(resultado);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

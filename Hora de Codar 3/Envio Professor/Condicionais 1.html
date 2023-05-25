@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionais 1</title>
+    <script>
+        // Define a idade mínima permitida
+        const idadeMinima = 18;
+
+        // Pergunta a idade do usuário
+        let idade = prompt("Qual é a sua idade?");
+
+        // Converte a idade para um número
+        idade = Number(idade);
+
+        // Verifica se a idade é válida e exibe a mensagem apropriada
+        if (isNaN(idade) || idade < 0) {
+            console.log("Idade inválida.");
+        } else if (idade < idadeMinima) {
+            console.log("Você é menor de idade e não pode acessar este conteúdo.");
+        } else {
+            console.log("Você tem idade suficiente para acessar este conteúdo.");
+        }
+
+        /* 
+        Este programa verifica se a idade informada pelo usuário é suficiente para acessar um determinado conteúdo, definido por uma idade mínima. A variável idadeMinima é definida como uma constante e a idade do usuário é solicitada usando a função prompt. A idade é então convertida para um número usando a função Number. A declaração if verifica se a idade é inválida ou menor que zero, e exibe uma mensagem de erro. Se a idade for maior ou igual à idade mínima, a mensagem de permissão é exibida.
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

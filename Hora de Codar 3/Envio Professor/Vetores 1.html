@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores 1</title>
+    <script>
+        // Define um vetor com alguns números
+        let numeros = [5, 2, 8, 4, 9];
+
+        // Define uma variável para indicar se o número foi encontrado
+        let encontrado = false;
+
+        // Pede ao usuário para digitar um número
+        let numero = prompt("Digite um número:");
+
+        // Converte o número para um inteiro
+        // Seria o mesmo que escrever let numero = parseInt(prompt("Digite um número:"));
+        numero = parseInt(numero);
+
+        // Percorre o vetor e verifica se o número está presente
+        for (let i = 0; i < numeros.length; i++) {
+            if (numeros[i] === numero) {
+                encontrado = true;
+                break;
+            }
+        }
+
+        // Exibe uma mensagem indicando se o número foi encontrado ou não
+        if (encontrado) {
+            console.log(numero + " está presente no vetor.");
+        } else {
+            console.log(numero + " não está presente no vetor.");
+        }
+
+
+        /* 
+            Este programa define um vetor numeros com alguns números e pede ao usuário para digitar um número. O programa converte o número para um inteiro e percorre o vetor usando um laço for. A cada iteração, o programa verifica se o número atual é igual ao número digitado pelo usuário e define a variável encontrado como true se for
+        */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionais 3</title>
+    <script>
+        // Pede ao usuário para digitar um número
+        let numero = prompt("Digite um número:");
+
+        // Converte o número para um inteiro
+        numero = parseInt(numero);
+
+        // Verifica se o número é válido    
+        if (isNaN(numero) || numero < 1) {
+            console.log("Número inválido.");
+        } else {
+            // Conta regressivamente até zero
+            console.log("Contagem regressiva:");
+            i = numero; 
+            while(i >= 0) {
+                console.log(i);
+                i--;
+            }
+        }
+
+
+        /* 
+            ste programa pede ao usuário para digitar um número e exibe uma contagem regressiva até zero. A variável numero é convertida para um inteiro usando a função parseInt. A declaração if verifica se o número é inválido ou menor que 1, e exibe uma mensagem de erro. Caso contrário, um laço while é usado para iterar do número até zero e exibir a contagem regressiva.
+        */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionais 3</title>
+    <script>
+        
+        // Define o valor do produto e o valor do desconto em percentual
+        const valorProduto = 100;
+        const descontoPercentual = 10;
+
+        // Calcula o valor do desconto em reais
+        const descontoReais = (descontoPercentual / 100) * valorProduto;
+
+        // Calcula o valor final do produto com desconto
+        const valorFinal = valorProduto - descontoReais;
+
+        // Verifica se o valor final é menor que o valor original
+        if (valorFinal < valorProduto) {
+        console.log("O valor final com desconto é de R$" + valorFinal.toFixed(2));
+        } else {
+            console.log("O desconto não é válido.");
+        }
+
+        /* 
+            Este programa calcula o valor final de um produto com base em um valor original e um percentual de desconto. A variável valorProduto armazena o valor original e a variável descontoPercentual armazena o percentual de desconto. O valor do desconto em reais é calculado multiplicando o valor original pelo percentual de desconto em decimal. O valor final com desconto é calculado sub
+        */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

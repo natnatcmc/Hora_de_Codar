@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividade 11</title>
+</head>
+<body>
+  <script>
+    let valores_dentro = 0;
+let valores_fora = 0;
+
+for (let i = 0; i < 10; i++) {
+  let valor = parseFloat(prompt("Informe um valor:"));
+  
+  if (valor >= 24 && valor <= 42) {
+    valores_dentro++;
+  } else {
+    valores_fora++;
+  }
+}
+
+console.log("Valores dentro do intervalo [24, 42]:", valores_dentro);
+console.log("Valores fora do intervalo [24, 42]:", valores_fora);
+
+  </script>
+</body>
+</html>

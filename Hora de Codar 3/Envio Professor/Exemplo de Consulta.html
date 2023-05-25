@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Consumindo uma API utilizando FETCH - Método 1</title>
+</head>
+
+<body>
+
+    <!-- Elemento -->
+    <h1 id="titulo">Exemplo de chamada da página</h1>
+
+    <!-- Formulário que irá receber as interações do usuário -->
+    <form class="col-6 mx-1 mt-4">
+        <label>ID para consulta</label>
+        <input id="inputExemplo" type="number" placeholder="Um número entre 1 e 10" />
+        <button id="btnConsultar">Consultar</button>
+    </form>
+
+    <!-- Essa div irá receber todas as respostas da chamda da API -->
+    <div id="conteudoPagina">
+
+
+    </div>
+
+    <script>
+        //Identifico o título da página e coloco na variavel titulo
+        var titulo = document.getElementById("titulo");
+
+        //Identifico a DIV que irá receber os dados da API e coloco na variavel conteudoPagina
+        var conteudoPagina = document.getElementById("conteudoPagina");
+
+        const inputExemplo = document.getElementById("inputExemplo");
+
+        //Uma função genérica. Não faz nada
+        function funcaoConsulta() {
+            alert("A função Consulta foi chamada");
+        }
+
+        // Crio um eventListener referenciando o elemento com o ID btnConsultar. 
+        // O addEventListener torna o btnConsultar um ouvinte. Agora ele aguarda o evento "click" para executar um determinado código. 
+        document.getElementById("btnConsultar").addEventListener("click", function (event) {
+            event.preventDefault(); //prevent Default -> previnir o comportamento padrão do botão
+            funcaoConsulta();
+            var valor = inputExemplo.value;
+            
+            if (valor > 0 && valor < 10) {
+                consultarPessoa(valor);
+            } else {
+                alert("Informe um número válido")
+            }
+        });
+
+        // Função que consulta a API e traz os dados consultados dentro de uma DIV
+        function consultarPessoa(idConsultado) {
+
+            // Esse modelo utiliza o comando fetch e trabalha com promessas. 
+            fetch('https://jsonplaceholder.typicode.com/users') // Fetch: Consumir os dados do endereço. Obs: pode levar um tempo para processar. Pesquisar por PROMESSAS ou PROMISES. Isso envolve Async e Await
+                .then(response => { // Then: E então
+                    return response.json(); // Retira todas as informações desncessárias e transforma os dados em JSON; 
+                })
+                .then(users => { // Then: E então crio um array chamado users
+                    console.log('Abaixo o resultado do consumo da API')
+                    console.log(users);
+
+                    // Exemplo dos dados exibidos
+                    titulo = users[idConsultado].name;
+
+                    conteudoPagina.innerHTML += '<span>Usuário pesquisado:</span> ';
+                    conteudoPagina.innerHTML += '<span>' + users[idConsultado].name + '</span> | ';
+                    conteudoPagina.innerHTML += '<span>' + users[idConsultado].phone + '</span> <br>';
+                })
+        }
+
+        consultarPessoa(5);
+    </script>
+</body>
+
+</html>
